@@ -4,9 +4,6 @@ function alertUser(){
     alert("You Click!!!")
     // buttonRef.removeEventListener('click',alertUser)  
 }
-
-buttonRef.addEventListener('click',alertUser,{once:true})
-
 function backgroundChange(){
     document.body.classList.add("pink")
 }
@@ -23,8 +20,8 @@ function changeText(){
 buttonRef.addEventListener('click',backgroundChange)
 buttonRef.addEventListener('click',changeText)  
 
+const image=document.querySelector("#shoppingCart");
 function updateImage(){
-    const image=document.querySelector("#shoppingCart");
     image.setAttribute(
         "src", src="shopping cart.png"
     );
@@ -34,6 +31,16 @@ function updateImage(){
 }
 buttonRef.addEventListener('click',updateImage)  
 
+const buttonContainer= document.querySelector(".button-container")
+function changeBGGreen(event){
+    console.log(event.target.tagname)
+    event.target.classList.add("green")
+    // if (event.target.tagName === 'BUTTON') {
+    //     const color = event.target.textContent;
+    //     event.target.style.backgroundColor = color;
+    //   }
+    }
+buttonContainer.addEventListener('click',changeBGGreen)
 
 
 
