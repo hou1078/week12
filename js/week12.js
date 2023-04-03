@@ -1,4 +1,13 @@
-let buttonRef= document.querySelector("#clickme")
+let buttonRef = document.querySelector("#clickme");
+
+function addNewButtonAndPara() {
+  var button = document.createElement('button');
+  document.body.appendChild(button);
+  button.textContent="purple"
+  button.addEventListener("mouseover", changeBGGreen)
+}
+
+buttonRef.addEventListener("click", addNewButtonAndPara);
 
 function alertUser(){
     alert("You Click!!!")
@@ -32,17 +41,17 @@ function updateImage(){
 buttonRef.addEventListener('click',updateImage)  
 
 const buttonContainer= document.querySelector(".button-container")
+// function changeBGGreen(event){
+//     console.log(event.target.tagname)
+//     event.target.classList.add("green")
+//     if (event.target.tagName === 'BUTTON') {
+//         const color = event.target.textContent;
+//         event.target.style.backgroundColor = color;
+//       }
+//     }
+// buttonContainer.addEventListener('click',changeBGGreen)
 function changeBGGreen(event){
-    console.log(event.target.tagname)
     event.target.classList.add("green")
-    if (event.target.tagName === 'BUTTON') {
-        const color = event.target.textContent;
-        event.target.style.backgroundColor = color;
-      }
-    }
-buttonContainer.addEventListener('click',changeBGGreen)
-function changeBGGreen(event){
-    event.target.classList.add("greenBG")
 }
 buttonContainer.addEventListener("mouseover", changeBGGreen)
 function changeTextColor(event){
